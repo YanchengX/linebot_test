@@ -43,7 +43,5 @@ def handle_message(event):
         TextSendMessage(text="吃我大便"))
 
 
-LINE_BOT_CHANNEL_TOKEN
-LINE_BOT_CHANNEL_SECRET
 if __name__ == "__main__":
     app.run()
