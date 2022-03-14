@@ -12,8 +12,8 @@ from linebot.models import (
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(
-    'Un/J4DSchKvjhWr8uvEmXUKOowijPJCpiWU77iZxRxa8PgTRiBtrk4CHhlog7DGtHBh3t7Ato6+Bh+j43UPaTfSs6SireSV0dhnAFM+xqcR4neWzcZtzcksdub+lWtsugybkeCproHycuDT9vRUGggdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('7cd651ab928ae756ce8225a6696a4a50')
+    'dQuT/Pq4nvlJ1QLyIrNn1gPgn6tujeaJZPoeCxUFrstW+CxWC7No/xfmiFkCYN5KQJEcumrcqrPOy0MkQrleNXhfyN7vQRo8AgkJ1zcZObfSvw59pB/GZoSUV2EgXwyYCn59m+lXi5z3DVuJ3G42iAdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('d974f7b2be1c754a8c1b4aa9757715b0')
 
 
 @app.route("/callback", methods=['POST'])
@@ -43,5 +43,7 @@ def handle_message(event):
         TextSendMessage(text="吃我大便"))
 
 
+LINE_BOT_CHANNEL_TOKEN
+LINE_BOT_CHANNEL_SECRET
 if __name__ == "__main__":
     app.run()
