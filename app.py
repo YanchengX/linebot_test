@@ -1,3 +1,4 @@
+from email import message
 from flask import Flask, request, abort
 from linebot import (
     LineBotApi, WebhookHandler
@@ -37,7 +38,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-
+    message = event.message.text
     if re.match('我誰', message):
         image_message = ImageSendMessage(
             original_content_url='https://media.nownews.com/nn_media/thumbnail/2019/10/1570089924-27a9b9c9d7facd3422fe4610dd8ebe42-696x386.png',
