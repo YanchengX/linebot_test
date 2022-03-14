@@ -1,7 +1,4 @@
 # 載入LineBot所需要的模組
-from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
-)
 import os
 from flask import Flask, request, abort
 
