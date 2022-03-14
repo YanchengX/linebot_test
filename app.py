@@ -1,6 +1,4 @@
-from email import message
 from flask import Flask, request, abort
-from sympy import re
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -39,6 +37,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
