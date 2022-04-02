@@ -30,8 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['7827-2001-b011-8010-6d67-e4bf-47b2-9148-97d2.ngrok.io',
 'localhost', 
 '127.0.0.1',
-'boesanline.herokuapp.com/'
-'djline.herokuapp.com'
+'djline.herokuapp.com',
 ]
 
 
