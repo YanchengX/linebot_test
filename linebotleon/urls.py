@@ -20,5 +20,5 @@ from linebot1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^callback', views.callback),
+    url('callback', views.callback),
 ]
