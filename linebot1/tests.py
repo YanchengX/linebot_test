@@ -6,41 +6,46 @@ import requests
 import re
 import time 
 
-weatherurl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-CE89DD19-8D5D-4FF4-A72F-036FB3BE367C"
-jso_get = requests.get(weatherurl)
-weatherpredict = jso_get.json()
 
-local = "臺中市"
-weatheroutput = ""
-gg = dict()
-b = weatherpredict['records']['location']
-for i in range(0,len(b)):   #22縣市
-    if local == b[i]['locationName']:
-        gg = dict(b[i])
-        break
 
-for g in range(0,2):
-    for i in range(0,len(gg['weatherElement'])):
-        tmp = gg['weatherElement'][i]['time'][g]
-        if i == 0:
-            timestr = tmp['startTime']
-            trans = time.strptime(timestr, "%Y-%m-%d %H:%M:%S")
-            result = time.strftime("%m-%d %H:%M", trans)
-            timestre = tmp['endTime']
-            transe = time.strptime(timestr, "%Y-%m-%d %H:%M:%S")
-            resulte = time.strftime("%m-%d %H:%M", trans)
-            weatheroutput += "".join("%s-%s\n"%(result,resulte))
-            weatheroutput += "".join("%s\n"%(tmp['parameter']['parameterName']))
-        elif i == 1:
-            weatheroutput += "".join("%s %% 下雨 \n"%(tmp['parameter']['parameterName']))
-        elif i == 2:
-            weatheroutput += "".join("最低 %s 度\n"%(tmp['parameter']['parameterName']))
-        elif i == 3:
-            weatheroutput += "".join("天氣 %s \n"%(tmp['parameter']['parameterName']))
-        elif i == 4:
-            weatheroutput += "".join("最高 %s 度\n"%(tmp['parameter']['parameterName']))
-print(weatheroutput)
+
+#天氣縣市查詢
+# weatherurl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-CE89DD19-8D5D-4FF4-A72F-036FB3BE367C"
+# jso_get = requests.get(weatherurl)
+# weatherpredict = jso_get.json()
+# local = "臺中市"
+# weatheroutput = ""
+# gg = dict()
+# b = weatherpredict['records']['location']
+# for i in range(0,len(b)):   #22縣市
+#     if local == b[i]['locationName']:
+#         gg = dict(b[i])
+#         break
+
+# for g in range(0,3):
+#     for i in range(0,len(gg['weatherElement'])):
+#         tmp = gg['weatherElement'][i]['time'][g]
+#         if i == 0:
+#             timestr = tmp['startTime']
+#             trans = time.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+#             result = time.strftime("%m-%d %H:%M", trans)
+#             timestre = tmp['endTime']
+#             transe = time.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+#             resulte = time.strftime("%m-%d %H:%M", trans)
+#             weatheroutput += "".join("%s-%s\n"%(result,resulte))
+#             weatheroutput += "".join("%s\n"%(tmp['parameter']['parameterName']))
+#         elif i == 1:
+#             weatheroutput += "".join("%s %% 下雨 \n"%(tmp['parameter']['parameterName']))
+#         elif i == 2:
+#             weatheroutput += "".join("最低 %s 度\n"%(tmp['parameter']['parameterName']))
+#         elif i == 3:
+#             weatheroutput += "".join("天氣 %s \n"%(tmp['parameter']['parameterName']))
+#         elif i == 4:
+#             weatheroutput += "".join("最高 %s 度\n"%(tmp['parameter']['parameterName']))
+# print(weatheroutput)
     
+
+#時間控制
 # for i in b:
 #     if local == b['locationName']:
 #         print(b)  
