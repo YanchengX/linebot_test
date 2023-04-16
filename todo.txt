@@ -8,10 +8,14 @@ linebot input > sql > timesearch > timecheck > output linebot
     v            v        
 
 @weather
-
 search weather      (DONE)
+
 search locate place 
 
+schedule: google-map api > find locate then search city weather
+
+@restaurant surround search
+schedul: google - api > locate
 
 #require knowledge >
 
@@ -29,4 +33,3 @@ schedule:
 put on Heroku successfully and crawler update
 
 2022/04/02 21:00
-

@@ -154,7 +154,7 @@ def callback(request):
                         event.reply_token,image_message
                         )      
                 if mtext=="抽小豬":
-                    n = random.randint(0,len(picpig))
+                    n = random.randint(0,len(picpig)-1)
                     image_message = ImageSendMessage(
                         original_content_url = picpig[n],
                         preview_image_url = picpig[n]

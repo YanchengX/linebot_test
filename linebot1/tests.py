@@ -5,7 +5,11 @@
 import requests
 import re
 import time 
-
+coun_iso_code = "TWN"
+coviurl = "https://covid-19.nchc.org.tw/api/covid19?CK=covid-19@nchc.org.tw&querydata=3001&limited=%s"%(coun_iso_code)
+#https://covid-19.nchc.org.tw/api.php?limited=BGD&tableID=3001
+covidata = requests.get(coviurl)
+print(covidata.content)
 
 
 
